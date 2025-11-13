@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Cadastro de Carro — Vou de Carro</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="brand">
+      <div class="logo"><img src="img/Imagem do WhatsApp de 2025-11-13 à(s) 00.44.55_7d5977ad.jpg" alt="Logo Vou de Carro"></div>
+      <div>
+        <h1>Vou de Carro</h1>
+        <small>Cadastre seu veículo para alugar</small>
+      </div>
+    </div>
+    <nav class="main-nav" id="navMenu">
+      <a href="index.html">Início</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section class="about-section">
+    <h2><i class="ri-car-line"></i> Cadastre seu veículo</h2>
+    <p>Preencha os dados abaixo para anunciar seu carro na plataforma.</p>
+
+    <form id="cadastroForm" class="car-form" enctype="multipart/form-data">
+      <div class="form-grid">
+        <label>
+          <span>Nome completo</span>
+          <input type="text" name="nome" required placeholder="Ex: João Silva">
+        </label>
+        <label>
+          <span>Email</span>
+          <input type="email" name="email" required placeholder="exemplo@email.com">
+        </label>
+        <label>
+          <span>Telefone</span>
+          <input type="tel" name="telefone" required placeholder="(11) 99999-9999">
+        </label>
+        <label>
+          <span>Modelo do carro</span>
+          <input type="text" name="modelo" required placeholder="Ex: Onix 2020">
+        </label>
+        <label>
+          <span>Cidade</span>
+          <input type="text" name="cidade" required placeholder="Ex: São Paulo, SP">
+        </label>
+        <label>
+          <span>Preço por dia (R$)</span>
+          <input type="number" name="preco" required min="50" step="1">
+        </label>
+      </div>
+
+      <label>
+        <span>Descrição</span>
+        <textarea name="descricao" rows="4" placeholder="Detalhes do carro, condições, consumo..." required></textarea>
+      </label>
+
+      <label>
+        <span>Fotos do carro (até 3 imagens)</span>
+        <input type="file" name="fotos" accept="image/*" multiple required>
+      </label>
+
+      <button type="submit" class="btn-primary glow"><i class="ri-upload-2-line"></i> Enviar cadastro</button>
+    </form>
+
+    <div id="mensagemSucesso" class="sucesso hidden">
+      <i class="ri-checkbox-circle-line"></i> Cadastro enviado com sucesso! 🚗
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <small>© <span id="year"></span> Vou de Carro — Todos os direitos reservados.</small>
+  </div>
+</footer>
+
+<script>
+  // apenas feedback local
+  const form = document.getElementById('cadastroForm');
+  const msg = document.getElementById('mensagemSucesso');
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    msg.classList.remove('hidden');
+    form.reset();
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  });
+</script>
+
+</body>
+</html>

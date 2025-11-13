@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mapa de Carros — Vou de Carro</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Biblioteca de Mapas (Leaflet) -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+  <style>
+    #map {
+      height: 70vh;
+      width: 100%;
+      border-radius: 16px;
+      box-shadow: 0 0 30px rgba(60,138,255,0.3);
+      margin-top: 1.5rem;
+    }
+    .leaflet-popup-content h4 {
+      margin: 0;
+      color: var(--primary);
+    }
+    .leaflet-popup-content p {
+      font-size: .9rem;
+      margin: .3rem 0;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="brand">
+      <div class="logo"><img src="img/Imagem do WhatsApp de 2025-11-13 à(s) 00.44.55_7d5977ad.jpg" alt="Logo Vou de Carro"></div>
+      <div>
+        <h1>Vou de Carro</h1>
+        <small>Encontre carros perto de você</small>
+      </div>
+    </div>
+    <nav class="main-nav" id="navMenu">
+      <a href="index.html">Início</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section class="about-section">
+    <h2><i class="ri-map-pin-2-line"></i> Carros próximos disponíveis</h2>
+    <p>Veja no mapa abaixo os veículos disponíveis para locação próximos à sua localização.</p>
+    <div id="map"></div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <small>© <span id="year"></span> Vou de Carro — Todos os direitos reservados.</small>
+  </div>
+</footer>
+
+<script>
+  // Lista de carros (exemplo fixo, você pode integrar com o backend depois)
+  const cars = [
+    {
+      nome: "Chevrolet Onix 2020",
+      preco: "R$ 129/dia",
+      cidade: "São Paulo, SP",
+      coords: [-23.5558, -46.6396],
+      img: "imagens/onix.jpg",
+      desc: "Compacto e econômico, ideal para uso urbano."
+    },
+    {
+      nome: "Volkswagen Gol 2019",
+      preco: "R$ 109/dia",
+      cidade: "Campinas, SP",
+      coords: [-22.9056, -47.0608],
+      img: "imagens/gol.jpg",
+      desc: "Confiável e com ótimo desempenho."
+    },
+    {
+      nome: "Fiat Uno 2018",
+      preco: "R$ 89/dia",
+      cidade: "Marília, SP",
+      coords: [-22.2171, -49.9501],
+      img: "imagens/uno.jpg",
+      desc: "Econômico e fácil de estacionar."
+    }
+  ];
+
+  // Cria o mapa
+  const map = L.map('map').setView([-22.9, -47.0], 7);
+
+  // Adiciona camada do OpenStreetMap
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '© OpenStreetMap contributors'
+  }).addTo(map);
+
+  // Adiciona marcadores
+  cars.forEach(car => {
+    const popup = `
+      <div style="text-align:center;">
+        <img src="${car.img}" style="width:100%;height:120px;object-fit:cover;border-radius:10px;">
+        <h4>${car.nome}</h4>
+        <p>${car.desc}</p>
+        <strong>${car.preco}</strong><br>
+        <small>${car.cidade}</small>
+      </div>
+    `;
+    L.marker(car.coords)
+      .addTo(map)
+      .bindPopup(popup);
+  });
+
+  // Tenta usar geolocalização do navegador
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(pos => {
+      const { latitude, longitude } = pos.coords;
+      L.marker([latitude, longitude], { 
+        icon: L.icon({
+          iconUrl: 'https://cdn-icons-png.flaticon.com/512/64/64113.png',
+          iconSize: [32, 32]
+        })
+      }).addTo(map).bindPopup("<strong>Você está aqui</strong>").openPopup();
+      map.setView([latitude, longitude], 10);
+    });
+  }
+</script>
+
+</body>
+</html>
+
