@@ -2,32 +2,34 @@
 const vehicles = [
   {
     id: 1,
-    title: "Fiat Uno 2018",
-    price: "R$ 89/dia",
+    title: "Chevrolet Onix 2020",
+    price: "R$ 129/dia",
     available: true,
-    img: "https://images.unsplash.com/photo-1542362567-b07e54358753?auto=format&fit=crop&w=800&q=60",
+    img: "img/onix.jpeg",
     city: "São Paulo, SP",
-    desc: "Compacto, econômico e ideal para cidade."
+    desc: "Compacto moderno, com conectividade, baixo consumo e direção elétrica. Ideal para o dia a dia urbano com conforto e eficiência."
   },
   {
     id: 2,
-    title: "VW Gol 2019",
-    price: "R$ 105/dia",
+    title: "Volkswagen Gol 2019",
+    price: "R$ 109/dia",
     available: true,
-    img: "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=800&q=60",
+    img: "img/gol.jpeg",
     city: "Campinas, SP",
-    desc: "Conforto e economia para deslocamentos do dia-a-dia."
+    desc: "Clássico confiável com motor potente e manutenção acessível. Perfeito para quem busca praticidade e desempenho equilibrado."
   },
   {
     id: 3,
-    title: "Chevrolet Onix 2020",
-    price: "R$ 129/dia",
-    available: false,
-    img: "https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=800&q=60",
+    title: "Fiat Uno 2018",
+    price: "R$ 89/dia",
+    available: true,
+    img: "img/uno.jpeg",
     city: "Marília, SP",
-    desc: "Tecnologia embarcada e baixo consumo."
+    desc: "Econômico, compacto e fácil de estacionar. O Uno é sinônimo de agilidade e custo-benefício, ideal para locações urbanas."
   }
 ];
+
+
 
 // ======== RENDERIZA OS VEÍCULOS ========
 const grid = document.getElementById("vehiclesGrid");
@@ -138,6 +140,7 @@ function reveal() {
 }
 window.addEventListener("scroll", reveal);
 reveal();
+
 
 
 

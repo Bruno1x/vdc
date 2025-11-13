@@ -8,55 +8,144 @@
   <!-- Ícones Premium -->
   <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
 
+  <!-- Fonte e Estilo -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<header class="site-header">
-  <div class="container header-inner">
-    <div class="brand">
-      <div class="logo">VDC</div>
-      <div>
-        <h1>Vou de Carro</h1>
-        <small>Mobilidade simples e segura</small>
+  <!-- Loader inicial -->
+  <div id="loader">
+    <div class="loader-logo">VDC</div>
+  </div>
+
+  <!-- ===== HEADER ===== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <div class="logo">
+          <img src="img/Imagem do WhatsApp de 2025-11-13 à(s) 00.44.55_7d5977ad.jpg" alt="">
+        </div>
+        <div>
+          <h1>Vou de Carro</h1>
+          <small>Mobilidade simples e segura</small>
+        </div>
       </div>
+
+      <nav class="main-nav" id="navMenu">
+        <a href="#sobre">Sobre</a>
+        <a href="#veiculos">Veículos</a>
+        <a href="#planos">Planos</a>
+        <a href="#contato" class="btn-outline">Entrar</a>
+      </nav>
+
+      <button class="menu-toggle" id="menuToggle"><i class="ri-menu-line"></i></button>
     </div>
+  </header>
 
-    <nav class="main-nav" id="navMenu">
-      <a href="#sobre">Sobre</a>
-      <a href="#veiculos">Veículos</a>
-      <a href="#planos">Planos</a>
-      <a href="#contato" class="btn-outline">Entrar</a>
-    </nav>
+  <!-- ===== HERO ===== -->
+  <main>
+    <section class="hero container" id="hero">
+      <div class="hero-text">
+        <h2>Alugue ou compartilhe o carro ideal.</h2>
+        <p>Mobilidade premium com conforto, segurança e transparência.</p>
+        <a href="#veiculos" class="btn-primary glow">Explorar Veículos</a>
+      </div>
+    </section>
 
-    <button class="menu-toggle" id="menuToggle">☰</button>
-  </div>
-</header>
+    <!-- ===== SEÇÃO SOBRE ===== -->
+    <section id="sobre" class="about-section container">
+      <h2>Sobre Nós</h2>
+      <p>O Vou de Carro conecta motoristas a veículos disponíveis, promovendo economia, praticidade e sustentabilidade.</p>
+      <div class="about-grid">
+        <div>
+          <div class="icon"><i class="ri-shield-check-line"></i></div>
+          <h4>Segurança</h4>
+          <p>Todos os veículos passam por inspeção e possuem seguro completo.</p>
+        </div>
+        <div>
+          <div class="icon"><i class="ri-flashlight-line"></i></div>
+          <h4>Tecnologia</h4>
+          <p>Gerencie reservas, pagamentos e suporte pelo aplicativo.</p>
+        </div>
+        <div>
+          <div class="icon"><i class="ri-team-line"></i></div>
+          <h4>Comunidade</h4>
+          <p>Mais de 10 mil motoristas ativos em todo o Brasil.</p>
+        </div>
+        <div>
+          <div class="icon"><i class="ri-leaf-line"></i></div>
+          <h4>Sustentabilidade</h4>
+          <p>Promovemos o uso consciente e compartilhado dos veículos.</p>
+        </div>
+      </div>
+    </section>
 
-<main>
-  <section class="hero container">
-    <div class="hero-text">
-      <h2>Alugue ou compartilhe o carro ideal.</h2>
-      <p>Mobilidade premium com conforto, segurança e transparência.</p>
-      <a href="#veiculos" class="btn-primary glow">Explorar Veículos</a>
+    <!-- ===== SEÇÃO VEÍCULOS ===== -->
+    <section id="veiculos" class="container">
+      <div class="carousel-controls">
+        <button id="prev" class="btn-outline"><i class="ri-arrow-left-line"></i></button>
+        <button id="next" class="btn-outline"><i class="ri-arrow-right-line"></i></button>
+      </div>
+      <div id="vehiclesGrid" class="grid"></div>
+    </section>
+
+    <!-- ===== PLANOS ===== -->
+    <section id="planos" class="about-section container">
+      <h2>Planos e Benefícios</h2>
+      <div class="about-grid">
+        <div>
+          <div class="icon"><i class="ri-car-line"></i></div>
+          <h4>Uso Diário</h4>
+          <p>Perfeito para quem precisa de um carro temporário com preço acessível.</p>
+        </div>
+        <div>
+          <div class="icon"><i class="ri-calendar-check-line"></i></div>
+          <h4>Assinatura Mensal</h4>
+          <p>Carro exclusivo com manutenção e seguro inclusos no plano.</p>
+        </div>
+        <div>
+          <div class="icon"><i class="ri-cash-line"></i></div>
+          <h4>Ganhe Alugando</h4>
+          <p>Cadastre seu carro e lucre com a locação de forma simples e segura.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONTATO ===== -->
+    <section id="contato" class="about-section container">
+      <h2>Fale Conosco</h2>
+      <p>Quer se tornar parceiro ou tirar dúvidas? Envie uma mensagem!</p>
+      <div class="about-grid">
+        <div>
+          <div class="icon"><i class="ri-phone-line"></i></div>
+          <h4>Atendimento</h4>
+          <p>0800 333 2025<br>Seg–Sex das 8h às 18h</p>
+        </div>
+        <div>
+          <div class="icon"><i class="ri-mail-line"></i></div>
+          <h4>Email</h4>
+          <p>contato@voudecarro.com.br</p>
+        </div>
+        <div>
+          <div class="icon"><i class="ri-map-pin-line"></i></div>
+          <h4>Endereço</h4>
+          <p>Av. Paulista, 1000 — São Paulo, SP</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <small>© <span id="year"></span> Vou de Carro — Todos os direitos reservados.</small>
     </div>
-  </section>
+  </footer>
 
-  <section id="veiculos" class="container">
-    <div class="carousel-controls">
-      <button id="prev" class="btn-outline"><i class="ri-arrow-left-line"></i></button>
-      <button id="next" class="btn-outline"><i class="ri-arrow-right-line"></i></button>
-    </div>
-    <div id="vehiclesGrid" class="grid"></div>
-  </section>
-</main>
-
-<footer class="site-footer">
-  <div class="container">
-    <small>© <span id="year"></span> Vou de Carro — Todos os direitos reservados.</small>
-  </div>
-</footer>
-
-<script src="script.js"></script>
+  <!-- Script -->
+  <script src="script.js"></script>
 </body>
 </html>
+
