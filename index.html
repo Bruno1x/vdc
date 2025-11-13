@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Vou de Carro — Mobilidade Inteligente</title>
+
+  <!-- Ícones Premium -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="brand">
+      <div class="logo">VDC</div>
+      <div>
+        <h1>Vou de Carro</h1>
+        <small>Mobilidade simples e segura</small>
+      </div>
+    </div>
+
+    <nav class="main-nav" id="navMenu">
+      <a href="#sobre">Sobre</a>
+      <a href="#veiculos">Veículos</a>
+      <a href="#planos">Planos</a>
+      <a href="#contato" class="btn-outline">Entrar</a>
+    </nav>
+
+    <button class="menu-toggle" id="menuToggle">☰</button>
+  </div>
+</header>
+
+<main>
+  <section class="hero container">
+    <div class="hero-text">
+      <h2>Alugue ou compartilhe o carro ideal.</h2>
+      <p>Mobilidade premium com conforto, segurança e transparência.</p>
+      <a href="#veiculos" class="btn-primary glow">Explorar Veículos</a>
+    </div>
+  </section>
+
+  <section id="veiculos" class="container">
+    <div class="carousel-controls">
+      <button id="prev" class="btn-outline"><i class="ri-arrow-left-line"></i></button>
+      <button id="next" class="btn-outline"><i class="ri-arrow-right-line"></i></button>
+    </div>
+    <div id="vehiclesGrid" class="grid"></div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <small>© <span id="year"></span> Vou de Carro — Todos os direitos reservados.</small>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
